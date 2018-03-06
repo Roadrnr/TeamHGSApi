@@ -22,7 +22,7 @@ namespace TeamHGSApi.Controllers
             }
 
             var comparison = String.Equals(strings.Str1, strings.Str2, StringComparison.OrdinalIgnoreCase);
-                        var returnObj = new ReturnObject
+            var returnObj = new ReturnObject
             {
                 Result = comparison
             };

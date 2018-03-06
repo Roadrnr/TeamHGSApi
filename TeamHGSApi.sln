@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27421.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamHGSApi", "TeamHGSApi\TeamHGSApi.csproj", "{EA2661D6-F876-4488-9CFF-7FDA814C3DB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamHGSApi", "TeamHGSApi\TeamHGSApi.csproj", "{EA2661D6-F876-4488-9CFF-7FDA814C3DB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamHGSApi.Tests", "TeamHGSApi.Tests\TeamHGSApi.Tests.csproj", "{B00D8E2E-44F5-4D30-A3FA-747BA9770992}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EA2661D6-F876-4488-9CFF-7FDA814C3DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA2661D6-F876-4488-9CFF-7FDA814C3DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA2661D6-F876-4488-9CFF-7FDA814C3DB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00D8E2E-44F5-4D30-A3FA-747BA9770992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00D8E2E-44F5-4D30-A3FA-747BA9770992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00D8E2E-44F5-4D30-A3FA-747BA9770992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00D8E2E-44F5-4D30-A3FA-747BA9770992}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
