@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using TeamHGSApi.Models;
 
 namespace TeamHGSApi.Controllers
 {
@@ -10,6 +11,11 @@ namespace TeamHGSApi.Controllers
         [HttpPost]
         public IActionResult CompareStrings([FromBody] InputObject strings)
         {
+            if (strings == null)
+            {
+                throw new ArgumentNullException(nameof(strings));
+            }
+
             if (String.IsNullOrWhiteSpace(strings.Str1))
             {
                 return BadRequest(strings);
@@ -28,6 +34,11 @@ namespace TeamHGSApi.Controllers
         [HttpPost]
         public IActionResult CompareEmail([FromBody] InputObject strings)
         {
+            if (strings == null)
+            {
+                throw new ArgumentNullException(nameof(strings));
+            }
+
             if (String.IsNullOrWhiteSpace(strings.Str1))
             {
                 return BadRequest(strings);
@@ -58,18 +69,5 @@ namespace TeamHGSApi.Controllers
             return Ok(returnObj);
         }
 
-    }
-
-    public class InputObject
-    {
-        public string Str1 { get; set; }
-        public string Str2 { get; set; }
-    }
-    public class ReturnObject
-    {
-        public bool Result { get; set; }
-        public DateTime LastUpdated { get; set; }
-        public int ResultStatus { get; set; }
-        public string ResultValue { get; set; }
     }
 }
