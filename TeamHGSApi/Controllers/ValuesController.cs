@@ -24,8 +24,7 @@ namespace TeamHGSApi.Controllers
             var comparison = String.Equals(strings.Str1, strings.Str2, StringComparison.OrdinalIgnoreCase);
                         var returnObj = new ReturnObject
             {
-                Result = comparison,
-                LastUpdated = DateTime.UtcNow
+                Result = comparison
             };
             return Ok(returnObj);
         }
@@ -47,7 +46,6 @@ namespace TeamHGSApi.Controllers
             var returnObj = new ReturnObject
             {
                 Result = false,
-                LastUpdated = DateTime.UtcNow,
                 ResultStatus = 0,
                 ResultValue = "ZoomInfo Email Blank"
             };
