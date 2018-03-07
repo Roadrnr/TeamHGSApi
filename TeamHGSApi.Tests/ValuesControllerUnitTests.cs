@@ -89,5 +89,87 @@ namespace TeamHGSApi.Tests
             Exception ex = Assert.Throws<ArgumentNullException>(() => _valuesController.CompareStrings(input));
         }
 
+
+        //CompareEmails Tests
+        [Fact]
+        public void EmailsMatch()
+        {
+            var input = new InputObject
+            {
+                Str1 = "string@email.com",
+                Str2 = "string@email.com"
+            };
+            var result = _valuesController.CompareEmail(input);
+
+            var okObjectResult = result as OkObjectResult;
+            Assert.NotNull(okObjectResult);
+
+            var returnObj = okObjectResult.Value as ReturnObject;
+
+            Assert.True(returnObj.Result, "emails should be equal");
+            Assert.True(returnObj.ResultStatus == 1);
+            Assert.True(returnObj.ResultValue == "Match");
+        }
+
+        [Fact]
+        public void EmailsDontMatch()
+        {
+            var input = new InputObject
+            {
+                Str1 = "string@email.com",
+                Str2 = "string2@email.com"
+            };
+            var result = _valuesController.CompareEmail(input);
+
+            var okObjectResult = result as OkObjectResult;
+            Assert.NotNull(okObjectResult);
+
+            var returnObj = okObjectResult.Value as ReturnObject;
+
+            Assert.False(returnObj.Result, "Emails should not be equal");
+            Assert.True(returnObj.ResultStatus == 2);
+            Assert.True(returnObj.ResultValue == "No Match");
+        }
+
+        [Fact]
+        public void Email2IsBlank()
+        {
+            var input = new InputObject
+            {
+                Str1 = "string@email.com",
+                Str2 = ""
+            };
+            var result = _valuesController.CompareEmail(input);
+
+            var okObjectResult = result as OkObjectResult;
+            Assert.NotNull(okObjectResult);
+
+            var returnObj = okObjectResult.Value as ReturnObject;
+
+            Assert.False(returnObj.Result, "Email 2 is blank.");
+            Assert.True(returnObj.ResultStatus == 0);
+            Assert.True(returnObj.ResultValue == "ZoomInfo Email Blank");
+        }
+
+        [Fact]
+        public void Email1IsBlank()
+        {
+            var input = new InputObject
+            {
+                Str1 = "",
+                Str2 = "string2@email.com"
+            };
+            var result = _valuesController.CompareEmail(input);
+
+            var okObjectResult = result as OkObjectResult;
+            Assert.Null(okObjectResult);
+        }
+
+        [Fact]
+        public void EmailInputObjectIsBlank()
+        {
+            InputObject input = null;
+            Exception ex = Assert.Throws<ArgumentNullException>(() => _valuesController.CompareStrings(input));
+        }
     }
 }
