@@ -16,12 +16,12 @@ namespace TeamHGSApi.Controllers
                 throw new ArgumentNullException(nameof(strings));
             }
 
-            if (String.IsNullOrWhiteSpace(strings.Str1))
+            if (string.IsNullOrWhiteSpace(strings.Str1))
             {
                 return BadRequest(strings);
             }
 
-            var comparison = String.Equals(strings.Str1, strings.Str2, StringComparison.OrdinalIgnoreCase);
+            var comparison = string.Equals(strings.Str1, strings.Str2, StringComparison.OrdinalIgnoreCase);
             var returnObj = new ReturnObject
             {
                 Result = comparison
@@ -38,7 +38,7 @@ namespace TeamHGSApi.Controllers
                 throw new ArgumentNullException(nameof(strings));
             }
 
-            if (String.IsNullOrWhiteSpace(strings.Str1))
+            if (string.IsNullOrWhiteSpace(strings.Str1))
             {
                 return BadRequest(strings);
             }
@@ -50,9 +50,9 @@ namespace TeamHGSApi.Controllers
                 ResultValue = "ZoomInfo Email Blank"
             };
 
-            if (String.IsNullOrWhiteSpace(strings.Str2)) return Ok(returnObj);
+            if (string.IsNullOrWhiteSpace(strings.Str2)) return Ok(returnObj);
 
-            var comparison = String.Equals(strings.Str1, strings.Str2, StringComparison.OrdinalIgnoreCase);
+            var comparison = string.Equals(strings.Str1, strings.Str2, StringComparison.OrdinalIgnoreCase);
             returnObj.Result = comparison;
             if (comparison)
             {
