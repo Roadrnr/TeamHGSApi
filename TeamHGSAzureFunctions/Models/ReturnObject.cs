@@ -1,6 +1,6 @@
 using System;
 
-namespace TeamHGSAzureFunctions
+namespace TeamHGSAzureFunctions.Models
 {
     public class ReturnObject
     {
